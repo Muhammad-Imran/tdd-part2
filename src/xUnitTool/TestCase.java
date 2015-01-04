@@ -14,6 +14,10 @@ public class TestCase {
 		
 	}
 	
+	public void tearDown() {
+		
+	}
+	
 	public void run() throws Exception {
 		setUp();
 		Method method = this.getClass().getDeclaredMethod(this.name);
@@ -21,5 +25,6 @@ public class TestCase {
 			method.setAccessible(true);
 			method.invoke(this);
 		}
+		tearDown();
 	}
 }
