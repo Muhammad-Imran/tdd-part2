@@ -30,4 +30,11 @@ public class TestCaseTest extends TestCase {
 		test.run();
 		assert result.summary().equals("1 run, 1 failed");
 	}
+	
+	public void testFailedResultFormatting() {
+		result = new TestResult();
+		result.testStarted();
+		result.testFailed();
+		assert result.summary().equals("1 run, 1 failed");
+	}
 }
